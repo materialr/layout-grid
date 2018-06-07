@@ -12,8 +12,8 @@ const getClassName = (align, className, columns, desktop, phone, tablet) => clas
   [`mdc-layout-grid__cell--span-${tablet}-tablet`]: !!tablet,
 });
 
-const Cell = ({ align, children, className, columns, desktop, phone, tablet }) => (
-  <div className={getClassName(align, className, columns, desktop, phone, tablet)}>
+const Cell = ({ align, children, className, columns, desktop, phone, tablet, ...props }) => (
+  <div className={getClassName(align, className, columns, desktop, phone, tablet)} {...props}>
     {children}
   </div>
 );

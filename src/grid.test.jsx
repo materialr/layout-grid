@@ -27,3 +27,16 @@ test('Grid > Adds all classNames based on props', () => {
 
   expect(actual).toBe(expected);
 });
+
+test('Grid > Passes through additional props', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <Grid data-qa={DATA_QA}>{CHILDREN}</Grid>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});
