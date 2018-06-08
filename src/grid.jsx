@@ -10,8 +10,8 @@ const getClassName = (align, className) => classnames({
   [className]: !!className,
 });
 
-const Grid = ({ align, children, className }) => (
-  <div className={getClassName(align, className)}>{children}</div>
+const Grid = ({ align, children, className, ...props }) => (
+  <div className={getClassName(align, className)} {...props}>{children}</div>
 );
 
 Grid.propTypes = {

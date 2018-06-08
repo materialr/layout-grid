@@ -7,8 +7,8 @@ const getClassName = className => classnames({
   [className]: !!className,
 });
 
-const Row = ({ children, className }) => (
-  <div className={getClassName(className)}>{children}</div>
+const Row = ({ children, className, ...props }) => (
+  <div className={getClassName(className)} {...props}>{children}</div>
 );
 
 Row.propTypes = {
